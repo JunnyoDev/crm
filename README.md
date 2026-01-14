@@ -1,29 +1,50 @@
-📋 Sistema CRM em Java (Console + MySQL)
+🚀 Java CRM System (Console Application + MySQL)
 
-Projeto CRM simples em Java, executado via console, utilizando JDBC para conexão com MySQL.
-O sistema permite realizar CRUD completo de usuários, com busca por CPF e criação automática do banco e tabela.
+A console-based CRM (Customer Relationship Management) system developed in Java, using JDBC for database integration with MySQL.
 
-🚀 Funcionalidades
+This project was created as an educational portfolio project, focusing on backend development, database design, and clean, structured Java code.
 
-✅ Criar banco de dados automaticamente
+👨‍💻 About the Project
 
-✅ Criar tabela usuarios automaticamente
+The goal of this project is to demonstrate practical knowledge of:
 
-✅ Cadastrar usuários
+Java programming and object-oriented principles
 
-✅ Listar usuários
+JDBC and relational database integration
 
-✅ Atualizar usuários
+SQL-based CRUD operations
 
-✅ Excluir usuários
+Basic system architecture and configuration management
 
-✅ Buscar usuário por CPF
+⚠️ This is a study project only. All data used is fictional and does not represent real personal information.
 
-✅ Validação de CPF e e-mail únicos no banco
+✨ Key Features
 
-🛠️ Tecnologias Utilizadas
+✔ Automatic database creation
+✔ Automatic table creation (usuarios)
+✔ Full CRUD operations (Create, Read, Update, Delete)
+✔ Search users by CPF
+✔ Unique validation for CPF and email at database level
+✔ Clean console-based user interface
+✔ Externalized database configuration (config.properties)
 
-Java (JDK 17 ou superior recomendado)
+🧠 Technical Highlights (What Recruiters Will Notice)
+
+Use of PreparedStatement to prevent SQL injection
+
+Proper use of try-with-resources for database connections
+
+Separation of configuration logic (DatabaseConfig)
+
+Relational database constraints (PRIMARY KEY, UNIQUE)
+
+Clear and readable console output
+
+Scalable structure for future improvements (services, DAO, validation layers)
+
+🛠️ Technologies & Tools
+
+Java (JDK 17+ recommended)
 
 JDBC (MySQL Connector/J)
 
@@ -33,10 +54,10 @@ IntelliJ IDEA / VS Code
 
 Git & GitHub
 
-📂 Estrutura do Projeto
+📂 Project Structure
 CRM/
 ├── src/
-│   └── Main.java
+│   ├── Main.java
 │   └── DatabaseConfig.java
 ├── lib/
 │   └── mysql-connector-j-x.x.x.jar
@@ -44,49 +65,69 @@ CRM/
 ├── .gitignore
 └── README.md
 
-⚙️ Configuração do Banco de Dados
-1️⃣ Criar o arquivo config.properties
+⚙️ Database Configuration
+1️⃣ Create the config.properties file
 db.urlBase=jdbc:mysql://localhost:3306/
 db.database=sistema_java
 db.user=root
-db.password=sua_senha_aqui
+db.password=your_password_here
 
-2️⃣ Classe DatabaseConfig
+2️⃣ Configuration Handling
 
-O projeto utiliza uma classe responsável por ler o arquivo config.properties.
+The DatabaseConfig class is responsible for reading the configuration file and loading database credentials dynamically, allowing easy environment changes without code modification.
 
-Ela carrega automaticamente as configurações do banco.
+🔌 Required Dependency
 
-🔌 Dependência MySQL (Obrigatório)
-
-Baixe o driver JDBC oficial:
+Download the official MySQL JDBC driver:
 
 🔗 https://dev.mysql.com/downloads/connector/j/
 
-Adicione o .jar na pasta lib/ e configure como dependência no projeto.
+Add the .jar file to the lib/ directory and configure it as a project dependency.
 
-▶️ Como Executar o Projeto
+▶️ How to Run
 
-Certifique-se que o MySQL está rodando
+Ensure MySQL is running
 
-Configure corretamente o config.properties
+Configure config.properties
 
-Execute a classe Main
+Run the Main class
 
-O sistema exibirá o menu no console:
+Console menu:
 
-========== SISTEMA JAVA (CRM) ==========
-1 - Cadastrar novo usuário
-2 - Listar usuários
-3 - Atualizar usuário
-4 - Excluir usuário
-5 - Buscar por CPF
-6 - Sair
+========== JAVA SYSTEM (CRM) ==========
+1 - Register new user
+2 - List users
+3 - Update user
+4 - Delete user
+5 - Search user by CPF
+6 - Exit
 
-🧪 Exemplo de Tabela Criada
+🧪 Database Schema Example
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(11) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE
 );
+
+🔮 Possible Improvements (Future Enhancements)
+
+Input validation layer (CPF and email format)
+
+DAO pattern implementation
+
+Logging system
+
+Authentication and user roles
+
+REST API version (Spring Boot)
+
+Frontend integration
+
+📄 License
+
+This project is licensed under the MIT License.
+
+⭐ Final Note
+
+This project reflects my commitment to learning backend development, Java, and database-driven systems, following industry practices and clean code principles.
